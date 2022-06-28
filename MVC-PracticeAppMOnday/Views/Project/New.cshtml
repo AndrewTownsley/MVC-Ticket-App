@@ -1,12 +1,12 @@
-﻿@model TicketViewModel
+﻿@model ProjectViewModel
 
 @{
     ViewData["Title"] = "New";
 }
 
 <nav>
-        <a class="btn btn-info" href="/ticket">
-            View All Tickets
+        <a class="btn btn-info" href="/project">
+            View All Projects
         </a>
 </nav>
 
@@ -14,37 +14,37 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                    <h4>Create New Ticket</h4>
+                    <h4>Create New Project</h4>
             </div>
             <div class="card-body">
 
                     <form 
-                        asp-action="NewTicket" 
-                        asp-controller="Ticket"
+                        asp-action="NewProject" 
+                        asp-controller="Project"
                         method="post"
                     >
                         <div class="mb-3">
-                            <label>Ticket Id</label>
+                            <label>Project Id</label>
                             <input 
                                 asp-for=Id
                                 class="form-control" 
                                 type="text" 
-                                placeholder="Ticket Id#" 
+                                placeholder="Project Id#" 
                                 style="width: 100px;" 
                             />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Title</label>
+                            <label class="form-label">Project Name</label>
                             <input
-                                asp-for=Title
+                                asp-for=Name
                                 type="text" 
                                 class="form-control" 
                             />
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Message</label>
+                            <label class="form-label">Description</label>
                             <textarea 
-                                asp-for=TicketBody
+                                asp-for=Description
                                 class="form-control"
                             >
                             </textarea>
@@ -53,11 +53,12 @@
                             type="submit"
                             class="btn btn-primary"
                         >
-                            Create Ticket
+                            Create Project
                         </button>
                     </form>
               </div>
          </div>
     </div>
 </section>
+
 

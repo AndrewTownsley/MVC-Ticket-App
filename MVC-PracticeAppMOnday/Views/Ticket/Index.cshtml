@@ -4,13 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>All Tickets</h2>
+<h2 class="mb-4">All Tickets</h2>
 
 <section class="pb-3 d-flex justify-content-between" style="max-width: 450px;">
 
-    <button class="btn btn-info mr-3 ">Uncompleted</button>
-    <button class="btn btn-info mr-3">Completed</button>
-    
+    <select class="form-select" style="width: 175px;">
+        <option value="">Sort By Status</option>
+        <option value="Completed">Completed</option>
+        <option value="Uncompleted">Uncompleted</option>
+    </select>  
+
     <select class="form-select" style="width: 175px;">
         <option value="">Sort By Priority</option>
         <option value="High">High</option>
@@ -26,18 +29,6 @@
             <li class="list-group-item">
                 <h3>@ticket.Title</h3>
                 <p>@ticket.TicketBody</p>
-   @*             <h3>@Model.Title</h3>
-                <p>@Model.TicketBody</p>*@
-          @*      @{
-                        if (Model.Complete == true)
-                        {
-                                    <p>Completed succesfully</p>
-                        }
-                        else
-                            {
-                                        <p>NOT Completed, at all</p>
-                            }
-                    }*@
             <label>Completed</label>
             <input type="checkbox"/>
             </li>
