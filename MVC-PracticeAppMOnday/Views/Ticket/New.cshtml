@@ -1,0 +1,114 @@
+﻿@model TicketViewModel
+
+@{
+    ViewData["Title"] = "New";
+}
+
+<nav>
+        <a class="btn btn-info" href="/ticket">
+            View All Tickets
+        </a>
+    <h2>Create New Ticket View.</h2>
+</nav>
+
+
+<section class="mb-3">
+    <form 
+        asp-controller="Ticket" 
+        asp-action="NewTicket"
+        method="post"
+        class="d-flex flex-column"
+    >
+        <div class="mb-3">
+            <label>Ticket Id</label>
+            <input 
+                asp-for=Id
+                class="form-control" 
+                type="text" 
+                placeholder="Ticket Id#" 
+                style="width: 100px;" 
+            />
+        </div>
+        <div>
+            <label>Title</label>
+            <input 
+                asp-for=Title
+                class="form-control" 
+                type="text" 
+                placeholder="Title"
+            />
+        </div>
+        <div class="mb-3">
+            <label>Describe the Issue</label>
+            <textarea 
+                asp-for=TicketBody
+                class="form-control" 
+                placeholder="Enter Comment Here..." 
+                rows="10" 
+                cols="80"
+            >
+            </textarea>
+        </div>
+        <button 
+            class="btn btn-primary" 
+            type="submit"  
+            style="width: 150px;"
+        >
+            Create Ticket
+        </button>
+    </form>
+</section>
+
+<div class="row mt-4">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                    <h4>Create New Ticket View.</h4>
+            </div>
+            <div class="card-body">
+
+                    <form 
+                        asp-action="NewTicket" 
+                        asp-controller="Ticket"
+                        method="post"
+                    >
+                        <div class="mb-3">
+                            <label>Ticket Id</label>
+                            <input 
+                                asp-for=Id
+                                class="form-control" 
+                                type="text" 
+                                placeholder="Ticket Id#" 
+                                style="width: 100px;" 
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Title</label>
+                            <input
+                                asp-for=Title
+                                type="text" 
+                                class="form-control" 
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea 
+                                asp-for=TicketBody
+                                class="form-control"
+                            >
+                            </textarea>
+                        </div>
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Create Ticket
+                        </button>
+                    </form>
+              </div>
+            <div class="card-footer">
+            </div>
+         </div>
+    </div>
+</div>
+

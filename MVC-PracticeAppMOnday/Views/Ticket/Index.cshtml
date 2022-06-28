@@ -1,0 +1,46 @@
+﻿@model List<MVC_PracticeAppMOnday.Models.TicketViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>All Tickets</h2>
+
+<section class="pb-3 d-flex justify-content-between" style="max-width: 450px;">
+
+    <button class="btn btn-info mr-3 ">Uncompleted</button>
+    <button class="btn btn-info mr-3">Completed</button>
+    
+    <select class="form-select" style="width: 175px;">
+        <option value="">Sort By Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+</section>
+
+<ul class="list-group">
+
+    @foreach(var ticket in Model)
+        {      
+            <li class="list-group-item">
+                <h3>@ticket.Title</h3>
+                <p>@ticket.TicketBody</p>
+   @*             <h3>@Model.Title</h3>
+                <p>@Model.TicketBody</p>*@
+          @*      @{
+                        if (Model.Complete == true)
+                        {
+                                    <p>Completed succesfully</p>
+                        }
+                        else
+                            {
+                                        <p>NOT Completed, at all</p>
+                            }
+                    }*@
+            <label>Completed</label>
+            <input type="checkbox"/>
+            </li>
+        }
+    
+</ul>

@@ -1,0 +1,38 @@
+﻿@model MVC_PracticeAppMOnday.Models.TicketViewModel
+
+@{
+    ViewData["Title"] = "TicketList";
+}
+
+<h2>All Tickets</h2>
+
+<section>
+
+    <button>Uncompleted</button>
+    <button>Completed</button>
+    
+    <select>
+        <option value="">Sort By Priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select>
+</section>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <p>ID:@Model.Id</p>
+        <h3>@Model.Title</h3>
+        <p>@Model.TicketBody</p>
+        @{
+                if (Model.Complete == true)
+                {
+                    <p>Completed succesfully</p>
+                }
+                else
+                    {
+                        <p>NOT Completed, at all</p>
+                    }
+            }
+    </li>
+</ul>
