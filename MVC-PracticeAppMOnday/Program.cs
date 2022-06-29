@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MVC_PracticeAppMOnday.Data;
+
 namespace MVC_PracticeAppMOnday
 {
     public class Program
@@ -8,6 +11,10 @@ namespace MVC_PracticeAppMOnday
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Use Entity Framework to add SQLServer DB based on settings.json connectionString
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
